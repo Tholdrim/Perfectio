@@ -88,13 +88,9 @@
 
             svg
             {
-                @icon-size: 17px;
+                .svg(@leading-color, 17px);
 
-                display: block;
-                fill: @leading-color;
-                height: @icon-size;
                 margin-right: 10px;
-                width: @icon-size;
             }
         }
 
@@ -110,13 +106,16 @@
 
             svg
             {
-                @icon-size: 40px;
-
-                display: block;
-                fill: currentColor;
-                height: @icon-size;
-                width: @icon-size;
+                .svg(currentColor, 40px);
             }
+        }
+
+        .svg(@fill-color, @icon-size)
+        {
+            display: block;
+            fill: @fill-color;
+            height: @icon-size;
+            width: @icon-size;
         }
 
         h3

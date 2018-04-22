@@ -1,0 +1,42 @@
+@media only screen and (min-width: 360px)
+{
+    #copyright .container
+    {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+@media only screen and (min-width: 450px)
+{
+    #contact
+    {
+        flex-flow: row wrap;
+        justify-content: space-around;
+        
+        .company-info
+        {
+            flex-basis: 100%;
+        }
+    }
+}
+
+@media only screen and (min-width: 700px)
+{
+    #contact
+    {
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        text-align: left;
+
+        .company-info
+        {
+            flex-basis: auto;
+        }
+
+        .contact-info li, .social-media ul
+        {
+            justify-content: flex-start;
+        }
+    }
+}

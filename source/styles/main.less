@@ -1,10 +1,149 @@
 @media only screen
 {
+    @leading-color: rgb(140, 190, 90);
+    @page-horizontal-margin: 10px;
+
     *
     {
         border-style: none;
         list-style-type: none;
         margin: 0;
         padding: 0;
+    }
+
+    .hidden
+    {
+        display: none;
+    }
+
+    a
+    {
+        font-weight: 400;
+    }
+
+    b
+    {
+        font-weight: 400;
+    }
+
+    body
+    {
+        font: normal normal 300 15px / 23px 'Roboto', sans-serif;
+        letter-spacing: normal;
+        text-align: justify;
+        text-decoration: none;
+        text-indent: 0;
+        text-transform: none;
+        white-space: normal;
+        word-spacing: normal;
+    }
+
+    /* ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~ */
+
+    footer
+    {
+        background-color: rgb(50, 50, 50);
+        color: rgb(170, 170, 170);
+        
+        a
+        {
+            color:  rgb(200, 200, 200);
+            text-decoration: none;
+            transition: color 0.5s ease;
+
+            &:hover
+            {
+                color: rgb(250, 250, 250);
+                text-decoration: underline;
+            }
+        }
+    }
+
+    #contact
+    {
+        @space-between-sections: 20px;
+        @vertical-padding: 40px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: (@vertical-padding - @space-between-sections) @page-horizontal-margin @vertical-padding @page-horizontal-margin;
+        text-align: center;
+
+        .company-info p:not(:first-of-type)
+        {
+            margin-top: 10px;
+        }
+
+        .contact-info li
+        {
+            align-items: center;
+            display: flex;
+            justify-content: center;
+
+            &:not(:first-child)
+            {
+                margin-top: 5px;
+            }
+
+            svg
+            {
+                @icon-size: 17px;
+
+                display: block;
+                fill: @leading-color;
+                height: @icon-size;
+                margin-right: 10px;
+                width: @icon-size;
+            }
+        }
+
+        .social-media ul
+        {
+            display: flex;
+            justify-content: center;
+
+            li:not(:first-child)
+            {
+                margin-left: 10px;
+            }
+
+            svg
+            {
+                @icon-size: 40px;
+
+                display: block;
+                fill: currentColor;
+                height: @icon-size;
+                width: @icon-size;
+            }
+        }
+
+        h3
+        {
+            color: @leading-color;
+            font: normal normal 400 18px / 28px 'Oswald', sans-serif;
+            letter-spacing: 1px;
+            margin: @space-between-sections 0;
+        }
+    }
+
+    #copyright
+    {
+        background-color: rgb(20, 20, 20);
+        color: rgb(140, 140, 140);
+        text-align: center;
+
+        .container
+        {
+            display: flex;
+            flex-direction: column;
+            padding: 5px @page-horizontal-margin;
+        }
+
+        b
+        {
+            color: @leading-color;
+        }
     }
 }

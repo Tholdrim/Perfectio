@@ -5,6 +5,13 @@ const less = require('gulp-less');
 const pump = require('pump');
 const rename = require('gulp-rename');
 
+gulp.task('assets', callback => {
+    pump([
+        gulp.src('source/assets/*.*'),
+        gulp.dest('result/assets'),
+    ], callback);
+});
+
 gulp.task('less', callback => {
     pump([
         gulp.src('source/styles/styles.less'),
@@ -24,7 +31,8 @@ gulp.task('minify', callback => {
     ], callback);
 });
 
-gulp.task('watch', ['minify', 'less'], () => {
+gulp.task('watch', ['assets', 'minify', 'less'], () => {
+    gulp.watch('source/assets/*.*', ['assets']);
     gulp.watch('source/styles/*.less', ['less']);
     gulp.watch('source/views/*.html', ['minify']);
 });

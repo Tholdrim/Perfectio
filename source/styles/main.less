@@ -1,11 +1,5 @@
 @media only screen
 {
-    @text-color: rgb(50, 50, 50);
-    @leading-color: rgb(140, 190, 90);
-    @background-color: rgb(240, 240, 240);
-
-    @page-horizontal-margin: 10px;
-
     *
     {
         border-style: none;
@@ -17,14 +11,6 @@
     .hidden
     {
         display: none;
-    }
-
-    .svg(@fill-color, @icon-size)
-    {
-        display: block;
-        fill: @fill-color;
-        height: @icon-size;
-        width: @icon-size;
     }
 
     a
@@ -58,7 +44,8 @@
         word-spacing: normal;
     }
 
-    h2, h3
+    h2,
+    h3
     {
         color: @leading-color;
         letter-spacing: 1px;
@@ -67,6 +54,11 @@
     p
     {
         hyphens: auto;
+
+        & + &
+        {
+            margin-top: 10px;
+        }
     }
 
     /* ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~ */
@@ -78,7 +70,6 @@
         a
         {
             align-items: center;
-            background: transparent none no-repeat center center;
             display: flex;
             height: 100px;
             opacity: 0.5;
@@ -100,11 +91,6 @@
             text-align: center;
         }
 
-        p + p
-        {
-            margin-top: 10px;
-        }
-
         ul
         {
             display: flex;
@@ -115,9 +101,6 @@
     }
 
     /* ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~ */
-
-    @footer-text-color: darken(@background-color, 25%);
-    @footer-background-color: @text-color;
 
     footer
     {
@@ -140,19 +123,11 @@
 
     #contact
     {
-        @space-between-sections: 20px;
-        @vertical-padding: 40px;
-
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding: (@vertical-padding - @space-between-sections) @page-horizontal-margin @vertical-padding @page-horizontal-margin;
+        padding: 40px @page-horizontal-margin;
         text-align: center;
-
-        .company-info p + p
-        {
-            margin-top: 10px;
-        }
 
         .contact-info li
         {
@@ -189,10 +164,15 @@
             }
         }
 
+        div + div
+        {
+            margin-top: 20px;            
+        }
+
         h3
         {
             font: normal normal 400 18px / 28px 'Oswald', sans-serif;
-            margin: @space-between-sections 0;
+            margin-bottom: 20px;
         }
     }
 
@@ -207,6 +187,11 @@
             display: flex;
             flex-direction: column;
             padding: 5px @page-horizontal-margin;
+        }
+
+        p + p
+        {
+            margin-top: 0;
         }
     }
 }

@@ -34,9 +34,27 @@
             flex-basis: auto;
         }
 
-        .contact-info li, .social-media ul
+        .contact-info li,
+        .social-media ul
         {
             justify-content: flex-start;
         }
+
+        div + div
+        {
+            margin-top: 0;
+        }
+    }
+}
+
+@media only screen and (min-width: @page-desktop-width)
+{
+    #contact,
+    #copyright .container,
+    main > section
+    {
+        box-sizing: border-box;
+        margin: 0 auto;
+        width: @page-desktop-width;
     }
 }

@@ -1,5 +1,44 @@
-@media only screen and (min-width: 450px)
+@media only screen and (min-width: 500px)
 {
+    #testimonials
+    {
+        .entry
+        {
+            align-items: flex-start;
+            flex-direction: row;
+        }
+
+        .left blockquote
+        {
+            margin-left: 25px;
+            margin-top: 0;
+
+            &:after
+            {
+                border-bottom-color: transparent;
+                border-right-color: @testimonials-bubble-color;
+                left: -40px;
+                top: 55px;
+            }
+        }
+
+        .right blockquote
+        {
+            margin-right: 25px;
+            margin-top: 0;
+            order: -1;
+
+            &:after
+            {
+                border-bottom-color: transparent;
+                border-left-color: @testimonials-bubble-color;
+                left: initial;
+                right: -40px;
+                top: 55px;
+            }
+        }
+    }
+
     #contact
     {
         flex-flow: row wrap;
@@ -10,10 +49,7 @@
             flex-basis: 100%;
         }
     }
-}
 
-@media only screen and (min-width: 480px)
-{
     #copyright .container
     {
         flex-direction: row;

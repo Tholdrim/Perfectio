@@ -26,7 +26,7 @@ gulp.task('less', callback => {
 gulp.task('minify', callback => {
     pump([
         gulp.src('source/views/*.html'),
-        htmlmin({ collapseWhitespace: true }),
+        htmlmin({ collapseWhitespace: true, removeComments: true }),
         gulp.dest('result')
     ], callback);
 });

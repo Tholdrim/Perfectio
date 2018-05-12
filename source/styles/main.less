@@ -44,11 +44,20 @@
         word-spacing: normal;
     }
 
+    cite
+    {
+        font-style: italic;
+    }
+
     h2,
     h3
     {
         color: @leading-color;
+        font-family: 'Oswald', sans-serif;
+        font-weight: 200;
         letter-spacing: 1px;
+        margin-bottom: 20px;
+        text-align: center;
     }
 
     p
@@ -86,9 +95,8 @@
 
         h2
         {
-            font: normal normal 300 48px / 58px 'Roboto', sans-serif;
-            margin-bottom: 20px;
-            text-align: center;
+            font-size: 48px;
+            line-height: 72px;
         }
 
         ul
@@ -97,6 +105,71 @@
             flex-wrap: wrap;
             justify-content: center;
             margin-top: 20px;
+        }
+    }
+
+    #testimonials
+    {
+        border-top: 1px solid @leading-color;
+        margin-top: 20px + @testimonials-icon-size / 2 - 1px;
+        padding-top: @testimonials-icon-size / 2;
+        position: relative;
+
+        .entry
+        {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+
+            & + .entry
+            {
+                margin-top: 20px;
+            }
+        }
+
+        blockquote
+        {
+            background-color: @testimonials-bubble-color;
+            border-radius: 20px;
+            margin-top: 25px;
+            padding: 20px;
+            position: relative;
+
+            &:after
+            {
+                content: '';
+                border: 20px solid transparent;
+                border-bottom-color: @testimonials-bubble-color;
+                height: 0;
+                left: calc(~"50% - 20px");
+                position: absolute;
+                top: -40px;
+                width: 0;
+            }
+        }
+
+        h3
+        {
+            font-size: 30px;
+            line-height: 45px;
+        }
+
+        img
+        {
+            border-radius: 50%;
+            height: 150px;
+            width: 150px;
+        }
+        
+        svg
+        {
+            .svg(@leading-color, @testimonials-icon-size);
+
+            background-color: @background-color;
+            left: calc(~"50% - " (@testimonials-icon-horizontal-padding + @testimonials-icon-size / 2));
+            padding: 0 @testimonials-icon-horizontal-padding;
+            position: absolute;
+            top: -@testimonials-icon-size / 2;
         }
     }
 
@@ -171,8 +244,10 @@
 
         h3
         {
-            font: normal normal 400 18px / 28px 'Oswald', sans-serif;
-            margin-bottom: 20px;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 28px;
+            text-align: inherit;
         }
     }
 

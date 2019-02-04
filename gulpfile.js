@@ -18,7 +18,7 @@ gulp.task('assets', callback => {
 gulp.task('less', callback => {
     pump([
         gulp.src('source/styles/styles.less'),
-        less(),
+        less({ math: 'always' }),
         gulp.dest('result'),
         rename({ suffix: '.min' }),
         cleanCSS({ level: 2 }),

@@ -166,7 +166,7 @@
             .svg(@leading-color, @testimonials-icon-size);
 
             background-color: @background-color;
-            left: calc(~"50% - " (@testimonials-icon-horizontal-padding + @testimonials-icon-size / 2));
+            left: ~"calc(50% - " (@testimonials-icon-horizontal-padding + @testimonials-icon-size / 2) ~")";
             padding: 0 @testimonials-icon-horizontal-padding;
             position: absolute;
             top: -@testimonials-icon-size / 2;
@@ -239,7 +239,7 @@
 
         div + div
         {
-            margin-top: 20px;            
+            margin-top: 20px;
         }
 
         h3

@@ -224,7 +224,7 @@
 
             svg
             {
-                .svg(@leading-color, 17px);
+                .svg(@footer-leading-color, 17px);
 
                 margin-right: 10px;
             }
@@ -253,6 +253,7 @@
 
         h3
         {
+            color: @footer-leading-color;
             font-size: 18px;
             font-weight: 400;
             line-height: 28px;
@@ -271,6 +272,11 @@
             display: flex;
             flex-direction: column;
             padding: 5px @page-horizontal-margin;
+        }
+
+        b
+        {
+            color: @footer-leading-color;
         }
 
         p + p

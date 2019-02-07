@@ -11,6 +11,14 @@
     .hidden
     {
         display: none;
+
+        &.readable
+        {
+            display: initial;
+            left: -9999px;
+            position: absolute;
+            top: -9999px;
+        }
     }
 
     a
@@ -160,7 +168,7 @@
             height: 150px;
             width: 150px;
         }
-        
+
         svg
         {
             .svg(@leading-color, @testimonials-icon-size);

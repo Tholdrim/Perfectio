@@ -47,10 +47,10 @@
         text-align: justify;
         text-decoration: none;
         text-indent: 0;
-        text-size-adjust: none;
         text-transform: none;
         white-space: normal;
         word-spacing: normal;
+        -webkit-text-size-adjust: 100%;
     }
 
     cite
@@ -108,12 +108,22 @@
             line-height: 72px;
         }
 
+        img
+        {
+            width: 200px;
+        }
+
+        li
+        {
+            margin: 5px;
+        }
+
         ul
         {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            margin-top: 20px;
+            margin: 15px 0 -5px 0;
         }
     }
 
@@ -191,13 +201,13 @@
         
         a
         {
-            color: lighten(@footer-text-color, 10%);
+            color: @footer-link-color;
             text-decoration: none;
             transition: color 0.5s ease;
 
             &:hover
             {
-                color: lighten(@footer-text-color, 30%);
+                color: @footer-hovered-link-color;
                 text-decoration: underline;
             }
         }
@@ -263,8 +273,8 @@
 
     #copyright
     {
-        background-color: darken(@footer-background-color, 10%);
-        color: darken(@footer-text-color, 10%);
+        background-color: @copyright-background-color;
+        color: @copyright-text-color;
         text-align: center;
 
         .container

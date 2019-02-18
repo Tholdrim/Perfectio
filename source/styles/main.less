@@ -5,7 +5,14 @@
         border-style: none;
         list-style-type: none;
         margin: 0;
+        outline-style: none;
         padding: 0;
+
+        &:focus
+        {
+            outline: 2px dotted @leading-color;
+            outline-offset: 2px;
+        }
     }
 
     .hidden
@@ -95,7 +102,7 @@
             transition: opacity 0.5s ease, transform 0.5s ease;
             width: 200px;
 
-            &:hover
+            &:focus, &:hover
             {
                 opacity: 1;
                 transform: scale(1);
@@ -207,9 +214,10 @@
             text-decoration: none;
             transition: color 0.5s ease;
 
-            &:hover
+            &:focus, &:hover
             {
                 color: @footer-hovered-link-color;
+                outline-color: @footer-leading-color;
                 text-decoration: underline;
             }
         }
@@ -246,6 +254,11 @@
         {
             display: flex;
             justify-content: center;
+
+            a
+            {
+                display: flex;
+            }
 
             li + li
             {

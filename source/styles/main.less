@@ -65,6 +65,12 @@
         font-style: italic;
     }
 
+    h2
+    {
+        font-size: 48px;
+        line-height: 72px;
+    }
+
     h2,
     h3
     {
@@ -83,6 +89,96 @@
         & + &
         {
             margin-top: 10px;
+        }
+    }
+
+    /* ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~ */
+
+    #projects
+    {
+        background-color: @secondary-background-color;
+
+        .container
+        {
+            padding: 20px @page-horizontal-margin;
+        }
+
+        .links
+        {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+
+            a
+            {
+                background-color: @leading-color;
+                border: 1px solid @leading-color;
+                border-radius: 5px;
+                color: @secondary-background-color;
+                margin: 0 5px;
+                padding: 4px 9px;
+                text-decoration: none;
+                transition: background-color 0.5s ease, color 0.5s ease;
+    
+                &:focus, &:hover
+                {
+                    color: @leading-color;
+                    background-color: @secondary-background-color;
+                }
+            }
+        }
+
+        .project
+        {
+            display: flex;
+            flex-direction: column;
+            margin: 20px 5px 0 5px;
+            width: 290px;
+        }
+
+        .technologies
+        {
+            background-size: contain;
+            display: flex;
+            flex-direction: column-reverse;
+            height: 200px;
+            order: -1;
+
+            &.perfectio
+            {
+                background-image: url('assets/perfectio.jpg');
+            }
+
+            li
+            {
+                background-color: @text-color;
+                border-radius: 5px;
+                color: @secondary-background-color;
+                font-size: 12px;
+                line-height: 14px;
+                margin: 1px;
+                padding: 2px 4px;
+            }
+
+            ul
+            {
+                flex-wrap: wrap-reverse;
+                margin-bottom: 10px;
+            }
+        }
+
+        h3
+        {
+            font-size: 24px;
+            line-height: 36px;
+            margin: 10px 0 20px 0;
+        }
+
+        ul
+        {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
         }
     }
 
@@ -107,12 +203,6 @@
                 opacity: 1;
                 transform: scale(1);
             }
-        }
-
-        h2
-        {
-            font-size: 48px;
-            line-height: 72px;
         }
 
         img
@@ -143,7 +233,7 @@
 
         &:after
         {
-            background: @background-color url(~'data:image/svg+xml;utf8,@{testimonials-icon}') center no-repeat;
+            background: url(~'data:image/svg+xml;utf8,@{testimonials-icon}') center no-repeat @background-color;
             content: '';
             display: block;
             height: @testimonials-icon-size;

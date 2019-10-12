@@ -4,7 +4,8 @@ Official Perfectio website source code.
 
 ## Assets
 
-SVG icons: [Broccolidry](https://dribbble.com/shots/587469-Free-16px-Broccolidryiconsaniconsetitisfullof-icons), [iconmonstr](https://iconmonstr.com) and [Simple Icons](https://simpleicons.org/)
+Background: [Unsplash](https://unsplash.com)  
+SVG icons: [Broccolidry](https://dribbble.com/shots/587469-Free-16px-Broccolidryiconsaniconsetitisfullof-icons), [iconmonstr](https://iconmonstr.com) and [Simple Icons](https://simpleicons.org)
 
 ## License
 

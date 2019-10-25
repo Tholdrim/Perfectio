@@ -37,6 +37,12 @@
                 top: 55px;
             }
         }
+
+        img
+        {
+            /* https://github.com/philipwalton/flexbugs/issues/225 */
+            flex-shrink: 0;
+        }
     }
 
     #contact

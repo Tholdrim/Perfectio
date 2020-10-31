@@ -240,7 +240,7 @@
         padding-top: @testimonials-icon-size / 2;
         position: relative;
 
-        &:after
+        &::after
         {
             background: url(~'data:image/svg+xml;utf8,@{testimonials-icon}') center no-repeat @background-color;
             content: '';
@@ -273,7 +273,7 @@
             padding: 20px;
             position: relative;
 
-            &:after
+            &::after
             {
                 content: '';
                 border: 20px solid transparent;
@@ -404,9 +404,29 @@
             color: @footer-leading-color;
         }
 
-        p + p
+        p
         {
-            margin-top: 0;
+            &:first-child
+            {
+                height: 23px;
+                overflow: hidden;
+            }
+
+            & + p
+            {
+                margin-top: 0;
+            }
+        }
+
+        span
+        {
+            white-space: nowrap;
+
+            & + span::before
+            {
+                content: "• ";
+                padding: 0 5px;
+            }
         }
     }
 }

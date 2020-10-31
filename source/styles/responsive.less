@@ -13,7 +13,7 @@
             margin-left: 25px;
             margin-top: 0;
 
-            &:after
+            &::after
             {
                 border-bottom-color: transparent;
                 border-right-color: @testimonials-bubble-color;
@@ -28,7 +28,7 @@
             margin-top: 0;
             order: -1;
 
-            &:after
+            &::after
             {
                 border-bottom-color: transparent;
                 border-left-color: @testimonials-bubble-color;
@@ -55,7 +55,10 @@
             flex-basis: 100%;
         }
     }
+}
 
+@media only screen and (min-width: 600px)
+{
     #copyright .container
     {
         flex-direction: row;

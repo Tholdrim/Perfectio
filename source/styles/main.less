@@ -200,23 +200,21 @@
         {
             align-items: center;
             display: flex;
-            height: 100px;
+            height: @clients-entry-height;
             opacity: 0.5;
-            transform: scale(0.8);
-            transition: opacity 0.5s ease, transform 0.5s ease;
-            width: 200px;
+            transition: opacity 0.5s ease;
+            width: @clients-entry-width;
 
             &:focus,
             &:hover
             {
                 opacity: 1;
-                transform: scale(1);
             }
         }
 
         li
         {
-            margin: 5px;
+            margin: 5px 20px;
         }
 
         ul
@@ -228,7 +226,8 @@
 
             img
             {
-                width: 200px;
+                max-height: @clients-entry-height;
+                max-width: @clients-entry-width;
             }
         }
     }

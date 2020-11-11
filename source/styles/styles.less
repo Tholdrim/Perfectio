@@ -1,4 +1,15 @@
-@import "definitions.less";
+@charset "UTF-8";
 
-@import "main.less";
-@import "responsive.less";
+@import (reference) "definitions.less";
+
+@import "generic.less";
+@import "footer.less";
+@import "legacy.less";
+
+each(@breakpoints,
+{
+    @media @value
+    {
+        .media(@value);
+    }
+});

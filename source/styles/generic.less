@@ -1,0 +1,87 @@
+.media(@media) when (@media = @breakpoints[0])
+{
+    a
+    {
+        font-weight: 400;
+
+        abbr
+        {
+            cursor: pointer;
+        }
+    }
+
+    abbr
+    {
+        cursor: help;
+        text-decoration: none;
+    }
+
+    body
+    {
+        font: normal normal 300 @font-size / @line-height 'Roboto', sans-serif;
+        letter-spacing: normal;
+        text-decoration: none;
+        text-indent: 0;
+        text-transform: none;
+        white-space: normal;
+        word-spacing: normal;
+        text-size-adjust: 100%;
+    }
+
+    cite
+    {
+        font-style: italic;
+    }
+
+    svg
+    {
+        height: @font-size;
+        width: $height;
+    }
+}
+
+.media(@media) when (@media = @breakpoints[320])
+{
+    *
+    {
+        border-style: none;
+        list-style-type: none;
+        margin: 0;
+        outline-style: none;
+        padding: 0;
+    }
+
+    body
+    {
+        background-color: @background-color;
+        color: @text-color;
+    }
+
+    p + p
+    {
+        margin-top: @spacings[normal];
+    }
+
+    .hidden
+    {
+        display: none;
+
+        &.readable
+        {
+            display: initial;
+            left: -9999px;
+            position: absolute;
+            top: $left;
+        }
+    }
+}
+
+.media(@media) when (@media = @breakpoints[1180])
+{
+    .container
+    {
+        box-sizing: border-box;
+        margin: 0 auto;
+        width: @max-width;
+    }
+}

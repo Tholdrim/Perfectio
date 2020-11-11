@@ -1,11 +1,15 @@
 # Perfectio
 
-Official Perfectio website source code.
+[![License: MIT](https://img.shields.io/badge/License-MIT-brightgreen.svg)](LICENSE.txt)
+[![Valid HTML5](https://img.shields.io/badge/HTML5-Valid-brightgreen)](https://validator.w3.org/nu/?doc=https%3A%2F%2Fwww.perfectio.com.pl)
+[![Valid CSS3](https://img.shields.io/badge/CSS3-Valid-brightgreen)](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fwww.perfectio.com.pl)
 
-## Assets
+This repository contains the source code for my business website.
+
+## Credits
 
 Background: [Unsplash](https://unsplash.com)  
-SVG icons: [Broccolidry](https://dribbble.com/shots/587469-Free-16px-Broccolidryiconsaniconsetitisfullof-icons), [iconmonstr](https://iconmonstr.com) and [Simple Icons](https://simpleicons.org)
+SVG icons: [iconmonstr](https://iconmonstr.com)
 
 ## License
 

@@ -1,6 +1,7 @@
-@footer-leading-color:  lighten(@leading-color, 20%);
 @footer-background-color-1: rgb(40, 40, 40);
 @footer-background-color-2: darken(@footer-background-color-1, 5%);
+@footer-icon-color: lighten(@footer-background-color-1, 15%);
+@footer-leading-color:  lighten(@leading-color, 20%);
 @footer-text-color-1: rgb(150, 150, 150);
 @footer-text-color-2: lighten(@footer-text-color-1, 20%);
 @footer-text-color-3: lighten(@footer-text-color-2, 20%);
@@ -38,8 +39,8 @@
 
             &::after
             {
-                background-color: @footer-leading-color;
-                bottom: 0;
+                background-color: currentColor;
+                bottom: -1px;
                 content: '';
                 display: block;
                 height: 1px;
@@ -53,23 +54,13 @@
         strong
         {
             color: @footer-leading-color;
-            font-weight: 400;
-        }
-
-        .icon::after
-        {
-            height: 0.125rem;
-            bottom: -$height;
         }
     }
 
     #contact
     {
-        .layout-grid(12);
-
         grid-row-gap: @spacings[big];
         justify-items: center;
-        padding: @spacings[big] @spacings[small];
 
         div
         {
@@ -101,58 +92,35 @@
                 margin-right: @spacings[small];
             }
         }
-        
+
         .social-media
         {
             a
             {
                 display: block;
-                padding: @spacings[small];
-                transition: background-color 0.5s ease, color 0.5s ease-in-out;
+                padding: @spacings[tiny];
+                transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+
+                &:focus,
+                &:hover
+                {
+                    background-color: @footer-icon-color;
+                }
             }
 
-            li
+            li + li
             {
-                margin: @spacings[tiny] 0 0 @spacings[tiny];
+                margin-left: @spacings[small];
             }
 
             svg
             {
-                .svg(currentColor, 1.5 * @font-size);
+                .svg(currentColor, @line-height - 2 * @spacings[tiny]);
             }
 
             ul
             {
                 display: flex;
-                flex-wrap: wrap;
-                margin: -@spacings[tiny] 0 0 -@spacings[tiny];
-            }
-
-            .github
-            {
-                &:focus,
-                &:hover
-                {
-                    background-color: darken(rgb(36, 41, 46), 10%);
-                }
-            }
-
-            .linkedin
-            {
-                &:focus,
-                &:hover
-                {
-                    background-color: rgb(10, 102, 194);
-                }
-            }
-
-            .stack-overflow
-            {
-                &:focus,
-                &:hover
-                {
-                    background-color: rgb(244, 128, 36);
-                }
             }
         }
     }
@@ -176,7 +144,7 @@
 
         p
         {
-            grid-column: span 2;
+            grid-column: span 12;
 
             &:last-child
             {
@@ -193,8 +161,6 @@
 
         .container
         {
-            .layout-grid(2);
-
             padding: @spacings[small];
         }
 
@@ -205,7 +171,7 @@
     }
 }
 
-.media(@media) when (@media = @breakpoints[660])
+.media(@media) when (@media = @breakpoints[840])
 {
     #contact
     {
@@ -214,32 +180,26 @@
 
         div
         {
-            grid-column: span 5;
+            grid-column: span 4;
         }
 
         .contact-details li
         {
             justify-content: flex-start;
         }
-
-        .social-media
-        {
-            grid-column: span 2;
-            justify-self: end;
-        }
     }
-    
+
     #copyright p
     {
-        grid-column: span 1;
-
         &:first-child
         {
+            grid-column: span 4;
             text-align: right;
         }
 
         &:last-child
         {
+            grid-column: span 8;
             order: -1;
             text-align: left;
         }

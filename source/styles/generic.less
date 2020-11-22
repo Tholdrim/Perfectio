@@ -1,4 +1,4 @@
-.media(@media) when (@media = @breakpoints[320])
+.media(@breakpoint) when (@breakpoint = @breakpoints[320px])
 {
     *
     {
@@ -29,7 +29,7 @@
     {
         background-color: @background-color;
         color: @text-color;
-        font: normal normal 300 @font-size / @line-height 'Roboto', sans-serif;
+        font: normal normal 300 @text-font-size / @text-line-height 'Roboto', sans-serif;
         letter-spacing: normal;
         text-decoration: none;
         text-indent: 0;
@@ -71,12 +71,12 @@
     }
 }
 
-.media(@media) when (@media = @breakpoints[1180])
+.media(@breakpoint) when (@breakpoint = @breakpoints[1180px])
 {
     .container
     {
         box-sizing: border-box;
         margin: 0 auto;
-        width: @max-width;
+        width: @breakpoints[1180px];
     }
 }

@@ -1,25 +1,23 @@
 @breakpoints:
 {
-    320: ~"only screen and (min-width: 20em)";
-    660: ~"only screen and (min-width: 41.25em)";
-    840: ~"only screen and (min-width: 52.5rem)";
-    1180: ~"only screen and (min-width: @{max-width})";
+    320px: rem(320px);
+    660px: rem(660px);
+    840px: rem(840px);
+    1180px: rem(1180px);
 }
 
 @spacings:
 {
-    tiny: 0.25rem;
-    small: 0.5rem;
-    normal: 1rem;
-    big: 2rem;
+    tiny: rem(4px);
+    small: rem(8px);
+    normal: rem(16px);
+    big: rem(32px);
 }
 
 /* ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~ */
 
-@font-size: 1rem;
-@line-height: 1.75rem;
-
-@max-width: 73.75rem;
+@text-font-size: rem(16px);
+@text-line-height: rem(28px);
 
 /* ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~ */
 

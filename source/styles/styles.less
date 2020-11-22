@@ -1,14 +1,20 @@
 @charset "UTF-8";
 
+@plugin "plugins/rem";
+
 @import (reference) "definitions.less";
 
-@import "generic.less";
-@import "footer.less";
-@import "legacy.less";
+.generic { @import "generic.less"; }
+.footer { @import "footer.less"; }
+.legacy { @import "legacy.less"; }
+
+.generic();
+.footer();
+.legacy();
 
 each(@breakpoints,
 {
-    @media @value
+    @media only screen and (min-width: @value)
     {
         .media(@value);
     }

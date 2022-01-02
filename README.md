@@ -38,6 +38,8 @@ Co jakiś czas sprawdzać:
 https://www.languagetool.org/
 https://sitechecker.pro/seo-report/https://www.perfectio.com.pl
 https://tools.pingdom.com
+https://contrast-finder.tanaguru.com/result.html?foreground=%23467319&background=%23E6E6E6&ratio=4.5&isBackgroundTested=false&algo=Rgb
+https://webaim.org/resources/contrastchecker/
 Audyt w Google Chrome
 
 Inspiracje:
@@ -45,4 +47,17 @@ Inspiracje:
 https://ergodise.pl/
 https://www.mateusz-archicinski.pl/
 https://www.johnschilling.com/
-https://sgsystems.pl/
+http://www.echofreelance.com/freelance-web-designer/
+https://mattfarley.ca/
+https://builtbybuffalo.com/
+https://www.mixd.co.uk/about/
+http://www.pascalvangemert.nl/#/contact
+https://www.vecteezy.com/vector-art/272507-testimonial-web-page-vector-design
+https://aircode.pl/
+https://www.bigmarker.com/
+https://www.gewinnarena.de/
+https://azure.microsoft.com/pl-pl/services/microsoft-sentinel/#documentation
+https://www.razer.com/cortex
+https://mornel.com/
+https://www.xolo.io/zz-en/go
+https://www.toptal.com/designers/web/portfolios

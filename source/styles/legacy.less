@@ -73,7 +73,8 @@
         }
 
         h2,
-        h3
+        h3,
+        h4
         {
             color: @leading-color;
             font-family: 'Oswald', sans-serif;
@@ -90,7 +91,96 @@
     {
         padding: 20px @page-horizontal-margin;
     }
-    
+
+    #services
+    {
+        &:after
+        {
+            background: url(~'data:image/svg+xml;utf8,@{services-icon}') center no-repeat @background-color;
+        }
+
+        .analysis:after
+        {
+            background: url(~'data:image/svg+xml;utf8,@{analysis-icon}') center no-repeat @background-color;
+        }
+
+        .audit:after
+        {
+            background: url(~'data:image/svg+xml;utf8,@{audit-icon}') center no-repeat @background-color;
+        }
+
+        .cloud:after
+        {
+            background: url(~'data:image/svg+xml;utf8,@{cloud-icon}') center no-repeat @background-color;
+        }
+
+        .desktop:after
+        {
+            background: url(~'data:image/svg+xml;utf8,@{desktop-icon}') center no-repeat @background-color;
+        }
+
+        .maintenance:after
+        {
+            background: url(~'data:image/svg+xml;utf8,@{maintenance-icon}') center no-repeat @background-color;
+        }
+
+        .mobile:after
+        {
+            background: url(~'data:image/svg+xml;utf8,@{mobile-icon}') center no-repeat @background-color;
+        }
+
+        .performance:after
+        {
+            background: url(~'data:image/svg+xml;utf8,@{performance-icon}') center no-repeat @background-color;
+        }
+
+        .team:after
+        {
+            background: url(~'data:image/svg+xml;utf8,@{team-icon}') center no-repeat @background-color;
+        }
+
+        .web:after
+        {
+            background: url(~'data:image/svg+xml;utf8,@{web-icon}') center no-repeat @background-color;
+        }
+        
+        h4
+        {
+            font-size: 18px;
+            font-weight: 200;
+            line-height: 26px;
+            margin-bottom: 0;
+            text-align: left;
+        }
+
+        li
+        {
+            display: block;
+            padding-left: 36px;
+            position: relative;
+
+            &:after
+            {
+                content: '';
+                display: block;
+                height: 26px;
+                left: 0;
+                position: absolute;
+                top: calc(~'50% - 13px');
+                width: 26px;
+            }
+        }
+
+        ul
+        {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, 240px);
+            grid-row-gap: 20px;
+            justify-content: space-evenly;
+            margin-top: 20px;
+        }
+    }
+
     /* ~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~=~ */
 
     #projects

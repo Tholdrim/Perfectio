@@ -1,6 +1,9 @@
-const pump = require('pump');
+const browserify = require("browserify");
 const browserSync = require('browser-sync').create();
-const gulp = Object.assign(require('gulp'), { cleanCss: require('gulp-clean-css'), minifyHtml: require('gulp-htmlmin'), less: require('gulp-less'), rename: require('gulp-rename') });
+const gulp = Object.assign(require('gulp'), { cleanCss: require('gulp-clean-css'), minifyHtml: require('gulp-htmlmin'), less: require('gulp-less'), typescript: require('gulp-typescript'), uglify: require("gulp-uglify-es").default });
+const pump = require('pump');
+const tsify = require("tsify");
+const vinyl = { buffer: require("vinyl-buffer"), source: require("vinyl-source-stream") };
 
 function assets(callback) {
     pump([
@@ -12,9 +15,7 @@ function assets(callback) {
 function less(callback) {
     pump([
         gulp.src('source/styles/styles.less'),
-        gulp.less({ math: 'always' }),
-        gulp.dest('result'),
-        gulp.rename({ suffix: '.min' }),
+        gulp.less({ math: 'parens' }),
         gulp.cleanCss({ level: 2 }),
         gulp.dest('result')
     ], callback);
@@ -39,12 +40,23 @@ function server() {
     browserSync.init({ port: 8080, server: 'result', ui: false, watch: true });
 }
 
+function typescript(callback) {
+    pump([
+        browserify({ entries: 'source/scripts/main.ts' }).plugin(tsify, { noImplicitAny: true, strictNullChecks: true }).bundle(),
+        vinyl.source("scripts.js"),
+        vinyl.buffer(),
+        gulp.uglify(),
+        gulp.dest("result")
+    ], callback);
+}
+
 function watch() {
     gulp.watch('source/assets/*.*', gulp.series(assets));
     gulp.watch('source/other/*.*', gulp.series(other));
+    gulp.watch('source/scripts/*.ts', gulp.series(typescript));
     gulp.watch('source/styles/*.less', gulp.series(less));
     gulp.watch('source/views/*.html', gulp.series(minify));
 }
 
-exports.build =  gulp.series(assets, less, minify, other);
+exports.build =  gulp.series(assets, less, minify, other, typescript);
 exports.default = gulp.series(exports.build, gulp.parallel(watch, server));

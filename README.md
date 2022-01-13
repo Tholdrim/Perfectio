@@ -8,7 +8,7 @@ This repository contains the source code for my business website.
 
 ## Credits
 
-Background: [Unsplash](https://unsplash.com)
+Background: [Unsplash](https://unsplash.com)  
 SVG icons: [iconmonstr](https://iconmonstr.com)
 
 ## License

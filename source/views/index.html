@@ -1,18 +1,19 @@
-﻿<!DOCTYPE html>
-<html lang="pl">
+<!DOCTYPE html>
+<html lang="en">
     <head>
         <meta charset="utf-8" />
-        <meta name="description" content="Strona internetowa firmy Perfectio świadczącej usługi w zakresie wytwarzania, wdrażania i rozwoju oprogramowania." />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="Perfectio is a company that specializes in providing software services." />
+        <meta name="viewport" content="width=device-width, minimum-scale=1" />
         <link href="https://www.perfectio.pl" rel="canonical" />
-        <link href="https://fonts.googleapis.com/css?family=Oswald:200,400%7CRoboto:300,300i,400,400i&amp;subset=latin-ext" rel="stylesheet" />
-        <link href="styles.min.css" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Oswald:200,400%7CRoboto:300,300i,400&amp;subset=latin-ext" rel="stylesheet" />
+        <link href="styles.css" rel="stylesheet" type="text/css" />
         <link href="assets/favicon-16x16.png" rel="icon" type="image/png" sizes="16x16" />
         <link href="assets/favicon-32x32.png" rel="icon" type="image/png" sizes="32x32" />
-        <title>Perfectio – Usługi informatyczne</title>
+        <script src="scripts.js" type="module"></script>
+        <title>Perfectio – Software Services</title>
     </head>
     <body>
-        <main>
+        <div id="legacy" lang="pl">
             <section id="about" class="container">
                 <h2>O firmie</h2>
                 <p>Nazywam się <b>Jan Walczyński</b> i zajmuję się świadczeniem kompleksowych usług w zakresie wytwarzania, wdrażania i rozwoju oprogramowania. Choć moja firma istnieje na rynku dopiero od 2016 roku, przygodę z informatyką rozpocząłem dużo wcześniej. Zafascynowany ogromem możliwości, jakie stwarza umiejętność wydawania poleceń komputerowi, pierwsze proste programy napisałem już w wieku sześciu lat na 8-bitowym sprzęcie marki Atari. Wraz z upływem czasu mój zapał do programowania nie zmalał, toteż z myślą o dalszym rozwoju swojej pasji podjąłem studia informatyczne na Uniwersytecie Wrocławskim. Połączenie nabytych tam solidnych podstaw teoretycznych z wieloletnim doświadczeniem praktycznym pozwala mi sprostać wymaganiom nawet najbardziej wymagających klientów.</p>
@@ -44,34 +45,52 @@
                     </ul>
                 </div>
             </section>
+        </div>
+        <main>
             <section id="clients" class="container">
-                <h2>Klienci</h2>
-                <p>W swojej działalności stawiam na nawiązywanie długotrwałej współpracy opartej na wzajemnym zrozumieniu i zaufaniu. Jestem przekonany, że czas poświęcony na budowaniu partnerskiej relacji owocuje szerszym zrozumieniem specyfiki danego projektu oraz pełniejszym określeniem potrzeb kontrahenta, co umożliwia zaproponowanie i wdrożenie najkorzystniejszych rozwiązań. Zadowolenie moich klientów, którymi są zarówno przedsiębiorstwa krajowe, jak i zagraniczne korporacje, jest najlepszym potwierdzeniem słuszności tego podejścia.</p>
-                <p>Poniżej znajdziecie Państwo listę firm, które miałem przyjemność wesprzeć swoimi umiejętnościami i doświadczeniem.</p>
-                <ul>
-                    <li><a href="https://www.insert.com.pl" title="InsERT S.A."><img src="assets/insert.png" alt="" /></a></li>
-                    <li><a href="https://www.intive.com" title="intive GmbH"><img src="assets/intive.png" alt="" /></a></li>
-                </ul>
-                <section id="testimonials" class="subsection">
-                    <h3>Rekomendacje</h3>
-                    <div class="entry left">
-                        <img src="assets/michal-czerwinski.jpg" alt="" />
-                        <blockquote>
-                            <p>W trakcie niemalże dwóch lat naszej wspólnej pracy Jan okazał się osobą bardzo pilną, pracowitą i skrupulatną. Był zdolny nie tylko do zaprojektowania i wykonania od zera nowych modułów aplikacji czy też bezpośredniej współpracy z osobami decyzyjnymi, ale także szybko stał się istotną częścią zespołu sprawującego opiekę nad młodszymi programistami. Mogę z czystym sumieniem polecić go wszystkim ceniącym sobie najwyższą jakość usług.</p>
-                            <p><cite><b>Michał Czerwiński</b> – Wiodący ekspert ds. inżynierii oprogramowania, intive</cite></p>
-                        </blockquote>
+                <div class="no-scripts">
+                    <h2>Pleased <b>clients</b></h2>
+                    <p>I focus on establishing long-term cooperation based on mutual respect and trust. The effort I put into building lasting partnerships results in better insight into my clients' businesses, which allows me to identify their needs more accurately. All this, combined with my extensive experience, translates into the ability to offer them the best-performing solutions. I believe that the unwavering satisfaction of my clients, who are both domestic companies and foreign corporations, constantly validates this approach.</p>
+                </div>
+                <section id="testimonials" class="no-scripts">
+                    <h3 class="hidden readable">Testimonials</h3>
+                    <div class="slides">
+                        <div class="slide" role="group" aria-label="Testimonial 1 of 2">
+                            <div class="header">
+                                <h4>Michał Czerwiński <small>Senior Principal Software Engineer</small></h4>
+                                <img src="assets/michal-czerwinski.jpg" alt="" class="author" />
+                                <a href="https://intive.com" class="company"><img src="assets/intive.png" alt="intive GmbH company website"></a>
+                            </div>
+                            <blockquote>
+                                <p>I have been working with Jan for almost two years. He turned out to be a very diligent, hardworking, and meticulous developer. Not only was he capable of designing new modules in an ASP.NET MVC-based solution from scratch or working with business owners on his own, but he also quickly became a vital part of the team managing junior developers. I can honestly recommend him for any .NET project, especially those where quality is of the utmost importance.</p>
+                            </blockquote>
+                        </div>
+                        <div class="slide" role="group" aria-label="Testimonial 2 of 2">
+                            <div class="header">
+                                <h4>Wojciech Kraj <small>Test Manager</small></h4>
+                                <img src="assets/wojciech-kraj.jpg" alt="" class="author" />
+                                <a href="https://www.insert.com.pl" class="company"><img src="assets/insert.png" alt="InsERT S.A. company website"></a>
+                            </div>
+                            <blockquote>
+                                <p>From the beginning of our cooperation, Jan proved to be a persistent and goal-oriented person. Thanks to his high technical skills and unconventional thinking, he is able to find solutions to even the most complex problems. He willingly shares his experience and ideas with other team members and is not afraid to express constructive criticism when necessary.</p>
+                            </blockquote>
+                        </div>
                     </div>
-                    <div class="entry right">
-                        <img src="assets/wojciech-kraj.jpg" alt="" />
-                        <blockquote>
-                            <p>Jan od początku naszej współpracy dał się poznać jako osoba wytrwała i zorientowana na cel. Dzięki swym wysokim umiejętnościom technicznym i nieszablonowemu myśleniu potrafi znaleźć rozwiązanie dla nawet najbardziej skomplikowanych problemów. Chętnie przy tym dzieli się swoim doświadczeniem i pomysłami z pozostałymi członkami zespołu, a gdy zachodzi potrzeba, nie boi się też wyrazić konstruktywnej krytyki.</p>
-                            <p><cite><b>Wojciech Kraj</b> – Lider zespołu inżynierów testów, InsERT&nbsp;S.A.</cite></p>
-                        </blockquote>
-                    </div>
+                    <nav>
+                        <button>
+                            <svg role="img" height="1em" width="1em" aria-hidden="true"><use xlink:href="#icon-arrow-left"></use></svg>
+                            <span class="hidden readable">Previous testimonial</span>
+                        </button>
+                        <span class="label"></span>
+                        <button>
+                            <svg role="img" height="1em" width="1em" aria-hidden="true"><use xlink:href="#icon-arrow-right"></use></svg>
+                            <span class="hidden readable">Next testimonial</span>
+                        </button>
+                    </nav>
                 </section>
             </section>
         </main>
-        <footer lang="en">
+        <footer>
             <section id="contact" class="container">
                 <h2 class="hidden readable">Contact</h2>
                 <div lang="pl">
@@ -131,15 +150,22 @@
             <section id="copyright">
                 <h2 class="hidden readable">Legal notice</h2>
                 <div class="container">
-                    <p>&copy; 2022 <strong>Jan Walczyński</strong></p>
-                    <p>
+                    <p>&copy; 2022 <b>Jan Walczyński</b></p>
+                    <small>
                         <span>Hosted on <a href="https://azure.microsoft.com">Microsoft Azure</a></span>
-                        <span><span class="separator">• </span>Valid <a href="https://validator.w3.org/check?uri=referer"><abbr title="HyperText Markup Language">HTML</abbr></a> and <a href="https://jigsaw.w3.org/css-validator/check/referer"><abbr title="Cascading Style Sheets">CSS</abbr></a></span>
-                    </p>
+                        <span class="separator">•</span>
+                        <span>Valid <a href="https://validator.w3.org/check?uri=referer"><abbr title="HyperText Markup Language">HTML</abbr></a> and <a href="https://jigsaw.w3.org/css-validator/check/referer"><abbr title="Cascading Style Sheets">CSS</abbr></a></span>
+                    </small>
                 </div>
             </section>
         </footer>
         <svg xmlns="http://www.w3.org/2000/svg" class="hidden">
+            <symbol id="icon-arrow-left" viewBox="0 0 24 24">
+                <path d="M12 12l12-7v14l-12-7zm-12 0l12-7v14l-12-7z" />
+            </symbol>
+            <symbol id="icon-arrow-right" viewBox="0 0 24 24">
+                <path d="M0 19v-14l12 7-12 7zm12 0v-14l12 7-12 7z" />
+            </symbol>
             <symbol id="icon-email" viewBox="0 0 24 24">
                 <path d="M12 12.713l-11.985-9.713h23.971l-11.986 9.713zm-5.425-1.822l-6.575-5.329v12.501l6.575-7.172zm10.85 0l6.575 7.172v-12.501l-6.575 5.329zm-1.557 1.261l-3.868 3.135-3.868-3.135-8.11 8.848h23.956l-8.11-8.848z" />
             </symbol>

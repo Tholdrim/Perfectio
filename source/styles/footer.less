@@ -8,53 +8,62 @@
 @text-color-2: lighten(@text-color-1, 20%);
 @text-color-3: lighten(@text-color-2, 20%);
 
-@copyright-font-size: rem(14px);
-@copyright-line-height: rem(24px);
-
 @header-font-size: rem(20px);
 @header-line-height: rem(24px);
 
+@copyright-font-size: rem(14px);
+@copyright-line-height: rem(24px);
+
+@social-media-icon-size: (@text-line-height - 2 * @spacings[tiny]);
+
 .media(@breakpoint) when (@breakpoint = @breakpoints[320px])
 {
-    footer
+    body > footer
     {
         background-color: @background-color-1;
         color: @text-color-1;
         text-align: center;
+
+        *:focus-visible
+        {
+            animation-name: focus-footer-animation;
+        }
 
         a
         {
             color: @text-color-1;
             position: relative;
             text-decoration: none;
-            transition: color 0.25s ease-in-out;
+            transition: color 0.25s ease-out;
 
-            &:focus,
+            &:focus-visible,
             &:hover
             {
                 color: @text-color-3;
+                transition-timing-function: ease-in;
 
                 &::after
                 {
-                    width: 100%;
+                    transition-timing-function: ease-in;
+                    transform: scaleX(1);
                 }
             }
 
             &::after
             {
-                background-color: currentColor;
+                border-bottom: solid 1px currentColor;
                 bottom: -1px;
                 content: '';
-                display: block;
-                height: 1px;
                 left: 0;
                 position: absolute;
-                transition: width 0.25s ease-in-out;
-                width: 0;
+                transform: scaleX(0);
+                transform-origin: left center;
+                transition: transform 0.25s ease-out;
+                width: 100%;
             }
         }
 
-        strong
+        b
         {
             color: @leading-color;
         }
@@ -79,7 +88,7 @@
             margin-bottom: @spacings[normal];
         }
 
-        .contact-details 
+        .contact-details
         {
             li
             {
@@ -102,12 +111,13 @@
             {
                 display: block;
                 padding: @spacings[tiny];
-                transition: background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+                transition: background-color 0.25s ease-out, color 0.25s ease-out;
 
-                &:focus,
+                &:focus-visible,
                 &:hover
                 {
                     background-color: @background-color-3;
+                    transition-timing-function: ease-in;
                 }
             }
 
@@ -118,7 +128,7 @@
 
             svg
             {
-                .svg(currentColor, @text-line-height - 2 * @spacings[tiny]);
+                .svg(currentColor, @social-media-icon-size);
             }
 
             ul
@@ -138,7 +148,7 @@
         {
             color: @text-color-2;
 
-            &:focus,
+            &:focus-visible,
             &:hover
             {
                 color: @text-color-3;
@@ -148,18 +158,17 @@
         p
         {
             grid-column: span 12;
+        }
 
-            &:last-child
-            {
-                height: @copyright-line-height;
-                margin-top: 0;
-                overflow: hidden;
-            }
+        small
+        {
+            font-size: inherit;
+            grid-column: span 12;
         }
 
         span
         {
-            white-space: nowrap;
+            display: block;
         }
 
         .container
@@ -169,6 +178,39 @@
 
         .separator
         {
+            display: none;
+        }
+    }
+
+    @keyframes focus-footer-animation
+    {
+        0%
+        {
+            outline-color: transparent;
+        }
+        50%
+        {
+            outline-color: @leading-color;
+        }
+        100%
+        {
+            outline-color: transparent;
+        }
+    }
+}
+
+.media(@breakpoint) when (@breakpoint = @breakpoints[360px])
+{
+    #copyright
+    {
+        span
+        {
+            display: initial;
+        }
+
+        .separator
+        {
+            display: initial;
             padding: 0 @spacings[tiny];
         }
     }
@@ -192,15 +234,15 @@
         }
     }
 
-    #copyright p
+    #copyright
     {
-        &:first-child
+        p
         {
             grid-column: span 4;
             text-align: right;
         }
 
-        &:last-child
+        small
         {
             grid-column: span 8;
             order: -1;

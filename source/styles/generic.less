@@ -5,8 +5,14 @@
         border-style: none;
         list-style-type: none;
         margin: 0;
-        outline-style: none;
         padding: 0;
+    }
+
+    *:focus-visible
+    {
+        animation: focus-animation 1s ease-in-out infinite;
+        outline: 2px dotted;
+        outline-offset: -2px;
     }
 
     a
@@ -25,12 +31,24 @@
         text-decoration: none;
     }
 
+    b
+    {
+        color: @leading-color;
+        font-weight: 400;
+    }
+
+    html
+    {
+        overflow-x: hidden;
+    }
+
     body
     {
-        background-color: @background-color;
+        background-color: @background-color-1;
         color: @text-color;
         font: normal normal 300 @text-font-size / @text-line-height 'Roboto', sans-serif;
         letter-spacing: normal;
+        overflow-x: hidden;
         text-decoration: none;
         text-indent: 0;
         text-transform: none;
@@ -39,15 +57,14 @@
         text-size-adjust: 100%;
     }
 
+    p
+    {
+        hyphens: auto;
+    }
+
     p + p
     {
         margin-top: @spacings[normal];
-    }
-
-    strong
-    {
-        color: @leading-color;
-        font-weight: 400;
     }
 
     .container
@@ -55,6 +72,14 @@
         .layout-grid(12);
 
         padding: @spacings[big] @spacings[small];
+
+        h2
+        {
+            font-size: @header-2-font-size;
+            font-weight: 300;
+            line-height: @header-2-line-height;
+            margin-bottom: @spacings[big];
+        }
     }
 
     .hidden
@@ -67,6 +92,22 @@
             left: -9999px;
             position: absolute;
             top: $left;
+        }
+    }
+
+    @keyframes focus-animation
+    {
+        0%
+        {
+            outline-color: transparent;
+        }
+        50%
+        {
+            outline-color: @leading-color;
+        }
+        100%
+        {
+            outline-color: transparent;
         }
     }
 }

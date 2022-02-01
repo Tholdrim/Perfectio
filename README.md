@@ -50,6 +50,7 @@ Analizator w Firefoksie
 
 Inspiracje:  
 
+https://theslidequest.com/  
 https://ergodise.pl/  
 https://www.mateusz-archicinski.pl/  
 https://www.johnschilling.com/  
